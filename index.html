@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>GarmentGS: Point-Cloud Guided Gaussian Splatting for High-Fidelity Non-Watertight 3D Garment Reconstruction</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="description" content="Project page for 'GarmentGS: Point-Cloud Guided Gaussian Splatting for High-Fidelity Non-Watertight 3D Garment Reconstruction.'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <style>
+        /* 添加全局样式以实现文本两端对齐 */
+        .justified-text {
+            text-align: justify; /* 文本两端对齐 */
+            text-justify: inter-word; /* 优化单词间距 */
+        }
+    </style>
+</head>
+<body>
+    <p class="title">GarmentGS: Point-Cloud Guided Gaussian Splatting for High-Fidelity Non-Watertight 3D Garment Reconstruction</p>
+    <div style="text-align: justify; font-size: 20pt; margin-bottom: 15px">
+        <span> </span>
+    </div>
+
+    <table width="999" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+        <tbody>
+            <tr>
+                <td align="center">| <a>Paper</a> | <a>Code</a> | <a>HuggingFace Demo</a> | <a>(will coming soon)</a> |</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="container">
+        <p><span class="section"><b>Abstract</b></span></p>
+        <p class="justified-text">
+            Traditional 3D garment creation requires extensive manual operations, resulting in time and labor costs. 
+            Recently, 3D Gaussian Splatting has achieved breakthrough progress in 3D scene reconstruction and rendering, attracting widespread attention and opening new pathways for 3D garment reconstruction. 
+            However, due to the unstructured and irregular nature of Gaussian primitives, it is difficult to reconstruct high-fidelity, non-watertight 3D garments. 
+            In this paper, we present GarmentGS, a dense point cloud-guided method that can reconstruct high-fidelity garment surfaces with high geometric accuracy and generate non-watertight, single-layer meshes. 
+            Our method introduces a fast dense point cloud reconstruction module that can complete garment point cloud reconstruction in 10 minutes, compared to traditional methods that require several hours. 
+            Furthermore, we use dense point clouds to guide the movement, flattening, and rotation of Gaussian primitives, enabling better distribution on the garment surface to achieve superior rendering effects and geometric accuracy. 
+            Through numerical and visual comparisons, our method achieves fast training and real-time rendering while maintaining competitive quality.
+        </p>
+        <p class="section">&nbsp;</p>
+
+        <!-- 其他内容保持不变 -->
+        <p class="title is-1 mt-1 has-text-centered">Overview of Garment3D</p>
+        <img src="asset/piplinev4.jpg" alt="Overview" width="100%">
+        <figcaption style="text-align: justify;">
+            Figure1: Overview of our method. We first <b>(a)</b> pull scattered 3D Gaussian primitives towards their nearest points in the dense point cloud, 
+            while <b>(b)</b> flattening 3D Gaussian ellipsoids into 2D Gaussian elliptical disks, 
+            then <b>(c)</b> rotate the 2D Gaussian elliptical disks at corresponding positions 
+            according to the normal directions of points in the dense point cloud to align the Gaussian primitives precisely with the clothing surface.
+        </figcaption>
+    </figure>
+
+        <p class="title is-3 mt-5 has-text-centered">Results for some garments</p>
+        <img src="asset/allvisualv1.jpg" alt="Overview" width="100%">
+        <figcaption style="text-align: justify;"></figcaption>
+        Figure2: Results for some garments. First column: ground truth. Second column: rendering effect. Remaining 5 columns: reconstructed meshes.
+        </figcaption>
+        <p class="title is-3 mt-5 has-text-centered">Comparison between ours and other methods</p>
+        <img src="asset/visual.jpg" alt="Overview" width="100%">
+        <figcaption style="text-align: justify;"></figcaption>
+    Figure3: Comparison between ours and other methods on multi-view reconstruction on DeepFashion3D dataset. 
+        Top row: rendering effect. Bottom 3 rows: reconstructed meshes.
+        </figcaption>
+
+        <div style="text-align: center;">
+            <img src="asset/table1.png" alt="Overview" width="80%">
+        </div>
+        
+        <p class="title is-3 mt-5 has-text-centered">Ablations</p>
+        <div style="text-align: center;">
+            <img src="asset/table2.png" alt="Overview" width="70%">
+        </div>
+
+
+    </div>
+</body>
+</html>
